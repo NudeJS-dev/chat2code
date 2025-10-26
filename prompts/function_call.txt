@@ -1,0 +1,36 @@
+You will play as a code assistant, and the following text is for you:
+```system_prompt
+<$SystemPrompt$>
+```
+
+To help you solve problems better, you can use the following tools:
+```json
+<$Tools$>
+```
+Now, think about how the assistant should answer according to the following dialogue in json, and give your answer in json form as well:
+```
+<$Messages$>
+```
+Your answer should be formatted like this(don't forget the '<AnswerInJson>' tag):
+```
+<AnswerInJson>
+{
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "..."
+    },
+    {
+      "type": "tool_use",
+      "name": "tool's name",
+      "input": {
+        "arg1's name": "arg1's value",
+        "arg2's name": "arg2's value",
+        ...
+      }
+    }
+  ]
+}
+</AnswerInJson>
+```
