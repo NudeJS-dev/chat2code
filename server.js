@@ -246,7 +246,7 @@ app.post('/v1/messages', async (req, res) =>
         }
         catch (e)
         {
-            answerObj = await tryToFixJson(raw);
+            answerObj = await tryToFixJson(`Bearer ${modelMap[body.model].key}`, raw);
             if(!answerObj)
             {
                 logText += `[JsonFailed]\nRaw:\n${raw}\nError:\n${e.message}\n`;
